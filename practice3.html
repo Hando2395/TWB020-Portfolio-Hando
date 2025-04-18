@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Responsive Float Layout</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            overflow: hidden;
+        }
+        article, aside, .extra {
+            float: left;
+            padding: 20px;
+            height: 200px;
+            color: white;
+        }
+        article {
+            width: 50%;
+            background: #3498db;
+        }
+        aside {
+            width: 25%;
+            background: #2ecc71;
+        }
+        .extra {
+            width: 25%;
+            background: #e74c3c;
+        }
+        /* ----- Responsive at 1000px (3 columns → 2 columns) ----- */
+        @media screen and (max-width: 1000px) {
+            article {
+                width: 60%;
+            }
+            aside {
+                width: 40%;
+            }
+            .extra {
+                width: 100%;
+                float: none;
+            }
+        }
+        /* ----- Responsive at 640px (All stacked) ----- */
+        @media screen and (max-width: 640px) {
+            article, aside, .extra {
+                float: none;
+                width: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <article>
+            <h2>Article</h2>
+            <p>Contenu principal</p>
+        </article>
+        <aside>
+            <h2>Aside</h2>
+            <p>Colonne secondaire</p>
+        </aside>
+        <section class="extra">
+            <h2>Extra</h2>
+            <p>Troisième colonne</p>
+        </section>
+    </div>
+</body>
+</html>
